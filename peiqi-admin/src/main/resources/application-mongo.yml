@@ -1,0 +1,9 @@
+spring:
+  data:
+    mongodb:
+      host: 114.67.104.138
+      port: 27017
+      authentication-database: admin
+      database: db_test
+      username: root
+      password: realz#404

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.peiqi</groupId>
+	<artifactId>PeiQi</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<peiqi.version>1.0.0</peiqi.version>
+		<java.version>1.8</java.version>
+		<druid.version>1.1.14</druid.version>
+		<fastjson.version>1.2.70</fastjson.version>
+		<log4j.version>1.2.17</log4j.version>
+		<commons-lang.version>2.6</commons-lang.version>
+		<commons-beanutils.version>1.9.0</commons-beanutils.version>
+		<druid.version>1.1.14</druid.version>
+	</properties>
+	
+	<!-- 依赖声明 -->
+	<dependencyManagement>
+		<dependencies>
+			<!-- SpringBoot的依赖配置-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.1.1.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            
+            <!--阿里数据库连接池 -->
+			<dependency>
+	            <groupId>com.alibaba</groupId>
+	            <artifactId>druid</artifactId>
+	            <version>${druid.version}</version>
+	        </dependency>
+	        
+	       	<!-- 阿里JSON解析器 -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+			
+			<!-- 常用工具包 -->
+	       	<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>${commons-lang.version}</version>
+			</dependency>
+			
+			<!-- commons-beanutils -->
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>${commons-beanutils.version}</version>
+			</dependency>
+			
+			<!-- log4j 日志 -->
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			
+			<!--阿里数据库连接池 -->
+			<dependency>
+	            <groupId>com.alibaba</groupId>
+	            <artifactId>druid-spring-boot-starter</artifactId>
+	            <version>${druid.version}</version>
+	        </dependency>
+			
+			<!-- 核心模块 -->
+	        <dependency>
+	            <groupId>com.peiqi</groupId>
+	            <artifactId>peiqi-framwork</artifactId>
+	            <version>${peiqi.version}</version>
+	        </dependency>
+	        
+	        <!-- hibernate数据层 -->
+	       	<dependency>
+	            <groupId>com.peiqi</groupId>
+	            <artifactId>peiqi-hibernate-dao</artifactId>
+	            <version>${peiqi.version}</version>
+	        </dependency>
+	        
+	       	<!-- 通用工具包 -->
+	       	<dependency>
+	            <groupId>com.peiqi</groupId>
+	            <artifactId>peiqi-common</artifactId>
+	            <version>${peiqi.version}</version>
+	        </dependency>
+	        
+	       	<!-- 实体包 -->
+	       	<dependency>
+	            <groupId>com.peiqi</groupId>
+	            <artifactId>peiqi-entity</artifactId>
+	            <version>${peiqi.version}</version>
+	        </dependency>
+	        
+		</dependencies>
+	</dependencyManagement>
+	
+	<!-- 子工程 -->
+	<modules>
+    	<module>peiqi-admin</module>
+	    <module>peiqi-framwork</module>
+	    <module>peiqi-hibernate-dao</module>
+	    <module>peiqi-common</module>
+    	<module>peiqi-entity</module>
+  	</modules>
+	
+	<!-- 插件引入 -->
+	<build>
+		<plugins>
+			<!-- maven插件, 规定jdk版本 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<!-- ali私服 -->
+	<repositories>
+		<repository>
+			<id>public</id>
+			<name>aliyun nexus</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>public</id>
+			<name>aliyun nexus</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+</project>

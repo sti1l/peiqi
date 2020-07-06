@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.peiqi</groupId>
+		<artifactId>PeiQi</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>peiqi-framwork</artifactId>
+	<name>peiqi-framwork</name>
+	
+	<description>
+	    framework框架核心
+	</description>
+
+	<dependencies>
+		<!-- SpringBoot Web容器 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- SpringBoot 拦截器 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		
+		<!-- hibernate持久层dao -->
+		<dependency>
+			<groupId>com.peiqi</groupId>
+			<artifactId>peiqi-hibernate-dao</artifactId>
+		</dependency>
+		
+	</dependencies>
+</project>

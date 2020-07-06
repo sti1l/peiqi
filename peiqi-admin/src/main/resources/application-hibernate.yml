@@ -1,0 +1,18 @@
+spring:
+  jpa:
+    database: MYSQL
+    #指定命名策略
+    hibernate:
+      naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      #指定hibernate方言
+      dialect: org.hibernate.dialect.MySQL5Dialect
+      #(hibernate4之后改用这个属性名来配置cacheProvider)来配置缓存的提供者CacheProvider
+      cache:
+        region:
+          factory_class: org.hibernate.cache.EhCacheProvider
+        use_second_level_cache: false
+        use_query_cache: false
+      ## Hibernate ddl auto (create, create-drop, update)
+      #自动创建|更新|验证数据库表结构。如果不是此方面的需求建议set value="none"
+      ddl-auto: none
+    show-sql: true

@@ -1,0 +1,65 @@
+## 数据源配置
+spring:
+  datasource:
+    readandwrite:
+      url: jdbc:mysql://114.67.104.138:3306/testaa?useSSL=false
+      username: root
+      password: realz#404
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+      #连接池的配置信息
+      ## 初始化大小，最小，最大
+      initialSize: 20
+      #指定必须保持连接的最小值
+      minIdle: 20
+      #指定连接池中最大的活跃连接数
+      maxActive: 300
+      ## 配置获取连接等待超时的时间
+      maxWait: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      minEvictableIdleTimeMillis: 300000
+      #指定获取连接时连接校验的sql查询语句
+      validationQuery: SELECT 1 FROM DUAL
+      #当连接空闲时，是否执行连接测试
+      testWhileIdle: true
+      #当从连接池借用连接时，是否测试该连接
+      testOnBorrow: false
+      #在连接归还到连接池时是否测试该连接
+      testOnReturn: false
+      # 打开PSCache，并且指定每个连接上PSCache的大小
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      filters: stat,wall,log4j
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=10
+    #读库连接信息
+    read:
+      url: jdbc:mysql://114.67.104.138:3306/testaa?useSSL=false
+      username: root
+      password: realz#404
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+      #连接池的配置信息
+      ## 初始化大小，最小，最大
+      initialSize: 20
+      minIdle: 20
+      maxActive: 300
+      ## 配置获取连接等待超时的时间
+      maxWait: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      # 打开PSCache，并且指定每个连接上PSCache的大小
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      filters: stat,wall,log4j
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=10
+  

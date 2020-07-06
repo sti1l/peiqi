@@ -1,0 +1,39 @@
+## springboot sql监控配置
+spring:
+  datasource:
+    druid:
+##### StatViewServlet配置 #######
+      #启用内置的监控页面
+      stat-view-servlet:
+        enabled: true
+        #内置监控页面的地址
+        url-pattern: /druid/*
+        #关闭 Reset All 功能
+        reset-enable: false
+        #设置登录用户名
+        login-username: admin
+        #设置登录密码
+        login-password: realz#404
+        #白名单（如果allow没有配置或者为空，则允许所有访问）
+        allow: 
+        #黑名单（deny优先于allow，如果在deny列表中，就算在allow列表中，也会被拒绝）
+        deny: 
+        
+##### Spring 监控 ####
+      aop-patterns: com.peiqi.*
+##### 开启session统计功能 #####
+      web-stat-filter:
+        enabled: true
+        session-stat-enable: true
+##### 慢sql统计 #####
+#      filter:
+#        stat:
+#          enabled: true
+#          db-type: mysql
+#          log-slow-sql: true
+#          slow-sql-millis: 1000
+#        wall:
+#          config:
+#            multi-statement-allow: true
+      
+        
