@@ -34,10 +34,16 @@
 			<optional>true</optional> <!-- 表示依赖不会传递 -->
 		</dependency>
         
-        <!-- 核心模块-->
+        <!-- 核心框架-->
         <dependency>
             <groupId>com.peiqi</groupId>
             <artifactId>peiqi-framwork</artifactId>
+        </dependency>
+        
+       	<!-- 系统模块-->
+        <dependency>
+            <groupId>com.peiqi</groupId>
+            <artifactId>peiqi-system</artifactId>
         </dependency>
         
        	<!-- 通用工具包 -->

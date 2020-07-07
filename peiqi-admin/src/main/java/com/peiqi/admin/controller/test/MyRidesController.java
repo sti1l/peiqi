@@ -3,7 +3,7 @@ package com.peiqi.admin.controller.test;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.peiqi.util.RedisUtil;
+import com.peiqi.common.utils.RedisUtil;
 
 /**
  * 测试Redis

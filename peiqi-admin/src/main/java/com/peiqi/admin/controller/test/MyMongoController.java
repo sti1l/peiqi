@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.peiqi.common.utils.MongoUtil;
 import com.peiqi.entity.mongo.ErrorLog;
-import com.peiqi.util.MongoUtil;
 
 /**
  * 测试MongoDB

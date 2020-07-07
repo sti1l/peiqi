@@ -15,6 +15,9 @@ spring:
     favicon:
       enabled: false
   profiles:    active: druid,mongo,redis,hibernate,constant,monitor
+  # 及时刷新
+  thymeleaf:
+    cache: false
     
 # 日志配置
 logging:
