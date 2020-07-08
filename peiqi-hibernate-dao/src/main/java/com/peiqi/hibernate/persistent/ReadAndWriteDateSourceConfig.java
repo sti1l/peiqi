@@ -50,7 +50,7 @@ public class ReadAndWriteDateSourceConfig {
 	@Bean("readandWriteentityManagerFactory")
 	public LocalContainerEntityManagerFactoryBean readandWriteentityManagerFactory(
 			EntityManagerFactoryBuilder builder) {
-		return builder.dataSource(dataSource()).packages("com.peiqi.entity") // 设置实体类所在位置
+		return builder.dataSource(dataSource()).packages("com.peiqi.entity", "com.peiqi.system.domain") // 设置实体类所在位置
 				.persistenceUnit("readAndwritePersistenceUnit").build();
 	}
 
