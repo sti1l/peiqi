@@ -3,7 +3,7 @@ spring:
   datasource:
     #读写库连接信息
     readandwrite:
-      url: jdbc:mysql://114.67.104.138:3306/ry?useSSL=false
+      url: jdbc:mysql://114.67.104.138:3306/peiqi?useSSL=false
       username: root
       password: realz#404
       driver-class-name: com.mysql.cj.jdbc.Driver
@@ -37,7 +37,7 @@ spring:
       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=10
     #读库连接信息
     read:
-      url: jdbc:mysql://114.67.104.138:3306/ry?useSSL=false
+      url: jdbc:mysql://114.67.104.138:3306/peiqi?useSSL=false
       username: root
       password: realz#404
       driver-class-name: com.mysql.cj.jdbc.Driver
