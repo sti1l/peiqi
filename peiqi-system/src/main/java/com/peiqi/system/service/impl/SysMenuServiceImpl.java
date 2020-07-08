@@ -24,6 +24,7 @@ import com.peiqi.system.service.ISysMenuService;
  */
 @Service
 public class SysMenuServiceImpl implements ISysMenuService {
+	
 	public static final String PREMISSION_STRING = "perms[\"{0}\"]";
 
 	@Autowired
@@ -38,9 +39,9 @@ public class SysMenuServiceImpl implements ISysMenuService {
 	@Override
 	public List<SysMenu> selectMenusByUser(SysUser user) {
 		List<SysMenu> menus = new LinkedList<SysMenu>();
-		// 管理员显示所有菜单信息
 		String sql_selectMenu = null;
 		ArrayList<Object> preParameters = null;
+		// 管理员显示所有菜单信息
 		if (user.isAdmin()) {
 			sql_selectMenu = this.getSql_selectMenu(null);
 		} else {
@@ -194,6 +195,12 @@ public class SysMenuServiceImpl implements ISysMenuService {
 		return null;
 	}
 
+	/**
+	 * 获取菜单列表查询语句
+	 * 
+	 * @param userId
+	 * @return
+	 */
 	private String getSql_selectMenu(Long userId) {
 		StringBuilder builder = new StringBuilder();
 		builder.append("SELECT DISTINCT ");
@@ -216,6 +223,9 @@ public class SysMenuServiceImpl implements ISysMenuService {
 			builder.append("	LEFT JOIN sys_role ro ON ur.role_id = ro.role_id  ");
 			builder.append("WHERE ");
 			builder.append("	ur.user_id = ? ");
+			builder.append("AND m.menu_type in ('M', 'C') and m.visible = 0 AND ro.status = 0 ");
+		} else {
+			builder.append("WHERE m.menu_type in ('M', 'C') and m.visible = 0 ");
 		}
 		builder.append("ORDER BY ");
 		builder.append("	m.parent_id, ");

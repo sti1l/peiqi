@@ -21,7 +21,7 @@ import com.peiqi.common.core.domain.BaseEntity;
  * @author STILL
  */
 @Entity
-@Table(name = "sys_menu", catalog = "ry")
+@Table(name = "sys_menu")
 public class SysMenu extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 

@@ -8,7 +8,7 @@ import com.peiqi.system.domain.SysUserRole;
 /**
  * 用户 业务层
  * 
- * @author ruoyi
+ * @author STILL
  */
 public interface ISysUserService
 {
@@ -37,12 +37,12 @@ public interface ISysUserService
     public List<SysUser> selectUnallocatedList(SysUser user);
 
     /**
-     * 通过用户名查询用户
+     * 通过登录账户查询用户
      * 
-     * @param userName 用户名
+     * @param loginName 用户名
      * @return 用户对象信息
      */
-    public SysUser selectUserByLoginName(String userName);
+    public SysUser selectUserByLoginName(String loginName);
 
     /**
      * 通过手机号码查询用户
