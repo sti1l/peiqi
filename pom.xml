@@ -23,7 +23,7 @@
 		<bitwalker.version>1.19</bitwalker.version>
 		<swagger.version>2.9.2</swagger.version>
 		<poi.version>3.17</poi.version>
-		<commons.io.version>2.5</commons.io.version>
+		<commons.io.version>2.7</commons.io.version>
 		<velocity.version>1.7</velocity.version>
 		<oshi.version>3.9.1</oshi.version>
 		<commons.fileupload.version>1.3.3</commons.fileupload.version>
